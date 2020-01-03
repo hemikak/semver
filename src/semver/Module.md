@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.com/hemikak/smtp.svg?branch=master)](https://travis-ci.com/hemikak/smtp)
-
-# hemikak/semver
 A library for semver.
 
 ## Module Overview
