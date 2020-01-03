@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/hemikak/smtp.svg?branch=master)](https://travis-ci.com/hemikak/smtp)
+[![Build Status](https://travis-ci.com/hemikak/semver.svg?branch=master)](https://travis-ci.com/hemikak/semver)
 
 # hemikak/semver
 A library for semver.
