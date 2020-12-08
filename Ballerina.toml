@@ -1,9 +1,20 @@
 [project]
 org-name= "hemikak"
-version= "1.0.1"
+version= "2.0.0"
 
 license= ["Apache 2.0"]
 authors= ["Hemika Kodikara"]
 keywords= ["semver", "versioning", "version"]
 repository= "https://github.com/hemikak/semver"
 
+
+
+[platform]
+target = "java8"
+
+    [[platform.libraries]]
+    modules = ["semver"]
+    groupId = "com.github.zafarkhaja"
+    artifactId = "java-semver"
+    version = "0.9.0"
+    path = "./libs/java-semver-0.9.0.jar"
