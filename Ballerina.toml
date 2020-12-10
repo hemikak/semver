@@ -1,13 +1,11 @@
 [project]
 org-name= "hemikak"
-version= "2.0.0"
+version= "2.0.1"
 
 license= ["Apache 2.0"]
 authors= ["Hemika Kodikara"]
 keywords= ["semver", "versioning", "version"]
 repository= "https://github.com/hemikak/semver"
-
-
 
 [platform]
 target = "java8"

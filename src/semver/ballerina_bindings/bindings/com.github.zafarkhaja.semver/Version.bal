@@ -9,7 +9,7 @@ import ballerina/java;
 @java:Binding {
     class: "com.github.zafarkhaja.semver.Version"
 }
-public type Version object {
+type InternalVersion object {
 
     *java:JObject;
 
@@ -35,7 +35,7 @@ public type Version object {
     #
     # + arg0 - The `Version` value required to map with the Java method parameter.
     # + return - The `int` value returning from the Java mapping.
-    function compareTo(Version arg0) returns int {
+    function compareTo(InternalVersion arg0) returns int {
         int externalObj = com_github_zafarkhaja_semver_Version_compareTo(self.jObj, arg0.jObj);
         return externalObj;
     }
@@ -44,7 +44,7 @@ public type Version object {
     #
     # + arg0 - The `Version` value required to map with the Java method parameter.
     # + return - The `int` value returning from the Java mapping.
-    function compareWithBuildsTo(Version arg0) returns int {
+    function compareWithBuildsTo(InternalVersion arg0) returns int {
         int externalObj = com_github_zafarkhaja_semver_Version_compareWithBuildsTo(self.jObj, arg0.jObj);
         return externalObj;
     }
@@ -119,7 +119,7 @@ public type Version object {
     #
     # + arg0 - The `Version` value required to map with the Java method parameter.
     # + return - The `boolean` value returning from the Java mapping.
-    function greaterThan(Version arg0) returns boolean {
+    function greaterThan(InternalVersion arg0) returns boolean {
         boolean externalObj = com_github_zafarkhaja_semver_Version_greaterThan(self.jObj, arg0.jObj);
         return externalObj;
     }
@@ -128,7 +128,7 @@ public type Version object {
     #
     # + arg0 - The `Version` value required to map with the Java method parameter.
     # + return - The `boolean` value returning from the Java mapping.
-    function greaterThanOrEqualTo(Version arg0) returns boolean {
+    function greaterThanOrEqualTo(InternalVersion arg0) returns boolean {
         boolean externalObj = com_github_zafarkhaja_semver_Version_greaterThanOrEqualTo(self.jObj, arg0.jObj);
         return externalObj;
     }
@@ -144,18 +144,18 @@ public type Version object {
     # The function that maps to the `incrementBuildMetadata` method of `com/github/zafarkhaja/semver/Version`.
     # 
     # + return - The `Version` value returning from the Java mapping.
-    function incrementBuildMetadata() returns Version {
+    function incrementBuildMetadata() returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementBuildMetadata(self.jObj);
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
     # The function that maps to the `incrementMajorVersion` method of `com/github/zafarkhaja/semver/Version`.
     # 
     # + return - The `Version` value returning from the Java mapping.
-    function incrementMajorVersion() returns Version {
+    function incrementMajorVersion() returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementMajorVersion(self.jObj);
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
@@ -163,18 +163,18 @@ public type Version object {
     #
     # + arg0 - The `string` value required to map with the Java method parameter.
     # + return - The `Version` value returning from the Java mapping.
-    function incrementMajorVersion2(string arg0) returns Version {
+    function incrementMajorVersion2(string arg0) returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementMajorVersion2(self.jObj, java:fromString(arg0));
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
     # The function that maps to the `incrementMinorVersion` method of `com/github/zafarkhaja/semver/Version`.
     # 
     # + return - The `Version` value returning from the Java mapping.
-    function incrementMinorVersion() returns Version {
+    function incrementMinorVersion() returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementMinorVersion(self.jObj);
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
@@ -182,18 +182,18 @@ public type Version object {
     #
     # + arg0 - The `string` value required to map with the Java method parameter.
     # + return - The `Version` value returning from the Java mapping.
-    function incrementMinorVersion2(string arg0) returns Version {
+    function incrementMinorVersion2(string arg0) returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementMinorVersion2(self.jObj, java:fromString(arg0));
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
     # The function that maps to the `incrementPatchVersion` method of `com/github/zafarkhaja/semver/Version`.
     # 
     # + return - The `Version` value returning from the Java mapping.
-    function incrementPatchVersion() returns Version {
+    function incrementPatchVersion() returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementPatchVersion(self.jObj);
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
@@ -201,18 +201,18 @@ public type Version object {
     #
     # + arg0 - The `string` value required to map with the Java method parameter.
     # + return - The `Version` value returning from the Java mapping.
-    function incrementPatchVersion2(string arg0) returns Version {
+    function incrementPatchVersion2(string arg0) returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementPatchVersion2(self.jObj, java:fromString(arg0));
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
     # The function that maps to the `incrementPreReleaseVersion` method of `com/github/zafarkhaja/semver/Version`.
     # 
     # + return - The `Version` value returning from the Java mapping.
-    function incrementPreReleaseVersion() returns Version {
+    function incrementPreReleaseVersion() returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_incrementPreReleaseVersion(self.jObj);
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
@@ -220,7 +220,7 @@ public type Version object {
     #
     # + arg0 - The `Version` value required to map with the Java method parameter.
     # + return - The `boolean` value returning from the Java mapping.
-    function lessThan(Version arg0) returns boolean {
+    function lessThan(InternalVersion arg0) returns boolean {
         boolean externalObj = com_github_zafarkhaja_semver_Version_lessThan(self.jObj, arg0.jObj);
         return externalObj;
     }
@@ -229,7 +229,7 @@ public type Version object {
     #
     # + arg0 - The `Version` value required to map with the Java method parameter.
     # + return - The `boolean` value returning from the Java mapping.
-    function lessThanOrEqualTo(Version arg0) returns boolean {
+    function lessThanOrEqualTo(InternalVersion arg0) returns boolean {
         boolean externalObj = com_github_zafarkhaja_semver_Version_lessThanOrEqualTo(self.jObj, arg0.jObj);
         return externalObj;
     }
@@ -266,9 +266,9 @@ public type Version object {
     #
     # + arg0 - The `string` value required to map with the Java method parameter.
     # + return - The `Version` value returning from the Java mapping.
-    function setBuildMetadata(string arg0) returns Version {
+    function setBuildMetadata(string arg0) returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_setBuildMetadata(self.jObj, java:fromString(arg0));
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
@@ -276,9 +276,9 @@ public type Version object {
     #
     # + arg0 - The `string` value required to map with the Java method parameter.
     # + return - The `Version` value returning from the Java mapping.
-    function setPreReleaseVersion(string arg0) returns Version {
+    function setPreReleaseVersion(string arg0) returns InternalVersion {
         handle externalObj = com_github_zafarkhaja_semver_Version_setPreReleaseVersion(self.jObj, java:fromString(arg0));
-        Version obj = new(externalObj);
+        InternalVersion obj = new(externalObj);
         return obj;
     }
 
@@ -323,9 +323,9 @@ public type Version object {
 #
 # + arg0 - The `int` value required to map with the Java method parameter.
 # + return - The `Version` value returning from the Java mapping.
-function Version_forIntegers(int arg0) returns Version {
+function Version_forIntegers(int arg0) returns InternalVersion {
     handle externalObj = com_github_zafarkhaja_semver_Version_forIntegers(arg0);
-    Version obj = new(externalObj);
+    InternalVersion obj = new(externalObj);
     return obj;
 }
 
@@ -334,9 +334,9 @@ function Version_forIntegers(int arg0) returns Version {
 # + arg0 - The `int` value required to map with the Java method parameter.
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + return - The `Version` value returning from the Java mapping.
-function Version_forIntegers2(int arg0, int arg1) returns Version {
+function Version_forIntegers2(int arg0, int arg1) returns InternalVersion {
     handle externalObj = com_github_zafarkhaja_semver_Version_forIntegers2(arg0, arg1);
-    Version obj = new(externalObj);
+    InternalVersion obj = new(externalObj);
     return obj;
 }
 
@@ -346,9 +346,9 @@ function Version_forIntegers2(int arg0, int arg1) returns Version {
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + arg2 - The `int` value required to map with the Java method parameter.
 # + return - The `Version` value returning from the Java mapping.
-function Version_forIntegers3(int arg0, int arg1, int arg2) returns Version {
+function Version_forIntegers3(int arg0, int arg1, int arg2) returns InternalVersion {
     handle externalObj = com_github_zafarkhaja_semver_Version_forIntegers3(arg0, arg1, arg2);
-    Version obj = new(externalObj);
+    InternalVersion obj = new(externalObj);
     return obj;
 }
 
@@ -356,9 +356,9 @@ function Version_forIntegers3(int arg0, int arg1, int arg2) returns Version {
 #
 # + arg0 - The `string` value required to map with the Java method parameter.
 # + return - The `Version` value returning from the Java mapping.
-function Version_valueOf(string arg0) returns Version {
+function Version_valueOf(string arg0) returns InternalVersion {
     handle externalObj = com_github_zafarkhaja_semver_Version_valueOf(java:fromString(arg0));
-    Version obj = new(externalObj);
+    InternalVersion obj = new(externalObj);
     return obj;
 }
 

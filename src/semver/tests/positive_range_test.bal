@@ -20,10 +20,11 @@ import ballerina/test;
     dataProvider: "positiveDataProvider"
 }
 function testInRange(string range, string expected) {
-    Version[] expectedVs = [checkpanic convertToVersion(expected)];
+    Version expectedVersion = checkpanic new(expected);
+    Version[] expectedVs = [expectedVersion];
     Version? foundV = checkpanic findLatestInRange(range, expectedVs);
     if (foundV is Version) {
-        test:assertEquals(toString(foundV), expected, msg = "int values not equal");
+        test:assertEquals(foundV.toString(), expected, msg = "int values not equal");
     } else {
         test:assertFail(msg = string `could not find in range:[${range}, ${expected}]`);
     }

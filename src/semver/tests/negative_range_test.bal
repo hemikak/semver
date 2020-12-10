@@ -20,9 +20,10 @@ import ballerina/test;
     dataProvider: "negativeDataProvider"
 }
 function testInNotRange(string range, string expected) {
-    Version[] expectedVs = [checkpanic convertToVersion(expected)];
+    Version expectedVersion = checkpanic new(expected);
+    Version[] expectedVs = [expectedVersion];
     Version? foundV = checkpanic findLatestInRange(range, expectedVs);
-    if (foundV is Version) {
+    if foundV is Version {
         test:assertFail(msg = string `found in range:[${range}, ${expected}]`);
     }
 }

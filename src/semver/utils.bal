@@ -14,28 +14,6 @@
 // specific language governing permissions and limitations
 // under the License.
 
-# Convert a string to a semver verison.
-# 
-# + sVersion - Semver version as a string.
-# + return - Error if cannot be converted. 
-public function convertToVersion(string sVersion) returns Version|error {
-    Version|error versionOrError = trap Version_valueOf(sVersion);
-    if versionOrError is error {
-        error err = error("invalid semver: '" + sVersion + "'. " + (versionOrError.detail()?.message ?: ""), cause = versionOrError);
-        return err;
-    }
-
-    return <Version>versionOrError;
-}
-
-# Convert a version to a string.
-# 
-# + sVersion - The version.
-# + return - Version as a string.
-public function toString(Version sVersion) returns string {
-    return sVersion.toString();
-}
-
 # Get the latest verions out of a list of versions which complies a range.
 # 
 # + semverRange - Semver range.
@@ -50,20 +28,14 @@ public function findLatestInRange(string semverRange, Version[] matchToVersions)
     // Filter versions for semver range
     Version[] versionsInRange = [];
     foreach int i in 0 ..< matchToVersions.length() {
-        boolean|error inRangeOrError = trap matchToVersions[i].satisfies2(semverRange);
-        if inRangeOrError is error {
-            error err = error("invalid semver range: '" + semverRange + "'.", cause = inRangeOrError);
-            return err;
-        }
-
-        boolean inRange = <boolean>inRangeOrError;
+        boolean inRange = check matchToVersions[i].satisfies(semverRange);
         if inRange {
             versionsInRange[versionsInRange.length()] = matchToVersions[i];
         }
     }
 
+    // Find latest version
     if versionsInRange.length() > 0 {
-        // Find latest version
         Version maxVersion = matchToVersions[0];
         versionsInRange.forEach(function(Version 'version) {
             if 'version.greaterThan(maxVersion) {
