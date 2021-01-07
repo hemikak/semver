@@ -59,6 +59,30 @@ public type Version object {
         return self.internalVersion.greaterThan('version.internalVersion);
     }
 
+    # Check if a version is greater or equal in value
+    # 
+    # + version - The version to compare.
+    # + return - `true` if greater or equal, else `false`.
+    public function greaterThanOrEqualTo(Version 'version) returns boolean {
+        return self.internalVersion.greaterThanOrEqualTo('version.internalVersion);
+    }
+
+    # Check if a version is less in value
+    # 
+    # + version - The version to compare.
+    # + return - `true` if less, else `false`.
+    public function lessThan(Version 'version) returns boolean {
+        return self.internalVersion.lessThan('version.internalVersion);
+    }
+
+    # Check if a version is less or equal in value
+    # 
+    # + version - The version to compare.
+    # + return - `true` if less or equal, else `false`.
+    public function lessThanOrEqualTo(Version 'version) returns boolean {
+        return self.internalVersion.lessThanOrEqualTo('version.internalVersion);
+    }
+
     # Get value representation of the version.
     # 
     # + return - The value.
