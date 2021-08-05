@@ -48,3 +48,12 @@ public function findLatestInRange(string semverRange, Version[] matchToVersions)
     return;
 }
 
+# Checks if a given semver is valid.
+# 
+# + semverAsString - Semver value.
+# + return - `true` if valid, else `false`.
+public function isValidSemver(string semverAsString) returns boolean {
+    Version|error semver = new(semverAsString);
+    return semver is Version;
+}
+

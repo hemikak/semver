@@ -19,6 +19,11 @@ import ballerina/test;
 @test:Config {}
 public function creationTest() {
     Version v = checkpanic new("1.2.3");
+    
+    test:assertEquals(v.getMajorVersion(), 1);
+    test:assertEquals(v.getMinorVersion(), 2);
+    test:assertEquals(v.getPatchVersion(), 3);
+
     v = checkpanic new("1.2.3-beta1");
     v = checkpanic new("1.2.3-beta2");
     v = checkpanic new("1.2.3-alpha1");

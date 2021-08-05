@@ -30,6 +30,27 @@ public type Version object {
         self.internalVersion = <InternalVersion>versionOrError;
     }
 
+    # Get the major version.
+    # 
+    # + return - Major version value.
+    public function getMajorVersion() returns int {
+        return self.internalVersion.getMajorVersion();
+    }
+
+    # Get the minor version.
+    # 
+    # + return - Minor version value.
+    public function getMinorVersion() returns int {
+        return self.internalVersion.getMinorVersion();
+    }
+
+    # Get the patch version.
+    # 
+    # + return - Patch version value.
+    public function getPatchVersion() returns int {
+        return self.internalVersion.getPatchVersion();
+    }
+
     # Convert a version to a string.
     # 
     # + return - Version as a string.
@@ -92,12 +113,3 @@ public type Version object {
                 self.internalVersion.getPatchVersion();
     }
 };
-
-# Checks if a given semver is valid.
-# 
-# + semverAsString - Semver value.
-# + return - `true` if valid, else `false`.
-public function isValidSemver(string semverAsString) returns boolean {
-    Version|error semver = new(semverAsString);
-    return semver is Version;
-}
