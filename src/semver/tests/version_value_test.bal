@@ -37,7 +37,7 @@ public function valueTest() {
 }
 
 @test:Config {}
-public function getLatestInRange() {
+public function getLatestInRangeTest() {
     Version v1_0_0 = checkpanic new("1.0.0");
     Version v2_1_2 = checkpanic new("2.1.2");
     Version v1_3_2 = checkpanic new("1.3.2");
@@ -93,5 +93,19 @@ public function getLatestInRange() {
         test:assertFail("matching version not found for '<=2.0.0'");
     } else {
         test:assertEquals(latestV1.toString(), "2.0.0");
+    }
+}
+
+@test:Config {}
+public function getLatestInTildRangeTest() {
+    Version v2_0_0 = checkpanic new("2.0.0");
+    Version v1_0_2 = checkpanic new("1.0.2");
+    Version v0_99_20 = checkpanic new("0.99.20");
+
+    Version? latestV1 = checkpanic findLatestInRange("~0.99.20", [v2_0_0, v1_0_2, v0_99_20]);
+    if latestV1 is () {
+        test:assertFail("matching version not found for '~0.99.20'");
+    } else {
+        test:assertEquals(latestV1.toString(), "0.99.20");
     }
 }

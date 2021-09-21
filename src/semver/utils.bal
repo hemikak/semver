@@ -36,7 +36,7 @@ public function findLatestInRange(string semverRange, Version[] matchToVersions)
 
     // Find latest version
     if versionsInRange.length() > 0 {
-        Version maxVersion = matchToVersions[0];
+        Version maxVersion = versionsInRange[0];
         versionsInRange.forEach(function(Version 'version) {
             if 'version.greaterThan(maxVersion) {
                 maxVersion = 'version;
